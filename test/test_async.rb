@@ -128,6 +128,15 @@ class TestSinatraAsync < MiniTest::Unit::TestCase
     assert_equal 'em', last_response.body
   end
 
+  def test_basic_async_head
+    head '/hello'
+    assert_async
+    async_continue
+    assert last_response.ok?
+    assert_equal '', last_response.body
+    assert_equal nil, last_response.headers['Content-Length']
+  end
+
   def test_em_async_continue_timeout
     get '/em_timeout'
     assert_async

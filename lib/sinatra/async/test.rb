@@ -38,6 +38,18 @@ class Sinatra::Async::Test
     end
 
     def handle_last_response(uri, env, status, headers, body)
+      # Perform the actions that would have happend in Sinatra, if a symbol
+      # hadn't been thrown.
+      headers['Content-Type'] = "text/html" unless headers['Content-Type']
+
+      # Never produce a body on HEAD requests. Do retain the Content-Length
+      # unless it's "0", in which case we assume it was calculated erroneously
+      # for a manual HEAD response and remove it entirely.
+      if env['REQUEST_METHOD'] == 'HEAD'
+        body = []
+        headers.delete('Content-Length') if headers['Content-Length'] == '0'
+      end
+
       @last_response = Rack::MockResponse.new(status, headers, body, env["rack.errors"].flush)
       body.close if body.respond_to?(:close)
 
