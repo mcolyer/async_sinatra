@@ -6,8 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["raggi"]
-  s.cert_chain = ["/Users/raggi/.gem/gem-public_cert.pem"]
-  s.date = %q{2011-03-08}
+  s.date = %q{2011-03-22}
   s.description = %q{A Sinatra plugin to provide convenience whilst performing asynchronous
 responses inside of the Sinatra framework running under async webservers.
 
@@ -26,8 +25,7 @@ Currently, supporting servers include:
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{libraggi}
-  s.rubygems_version = %q{1.6.0}
-  s.signing_key = %q{/Users/raggi/.gem/gem-private_key.pem}
+  s.rubygems_version = %q{1.4.2}
   s.summary = %q{A Sinatra plugin to provide convenience whilst performing asynchronous responses inside of the Sinatra framework running under async webservers}
   s.test_files = ["test/test_async.rb"]
 
@@ -44,7 +42,8 @@ Currently, supporting servers include:
       s.add_development_dependency(%q<hoe-git>, [">= 1.3"])
       s.add_development_dependency(%q<hoe-gemspec2>, [">= 1.0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
-      s.add_development_dependency(%q<eventmachine>, [">= 0.12.11"])
+      s.add_development_dependency(%q<eventmachine>, [">= 0.12.10"])
+      s.add_development_dependency(%q<rack-test>, [">= 0"])
       s.add_development_dependency(%q<hoe>, [">= 2.9.1"])
     else
       s.add_dependency(%q<rack>, [">= 1.2.1"])
@@ -56,7 +55,8 @@ Currently, supporting servers include:
       s.add_dependency(%q<hoe-git>, [">= 1.3"])
       s.add_dependency(%q<hoe-gemspec2>, [">= 1.0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
-      s.add_dependency(%q<eventmachine>, [">= 0.12.11"])
+      s.add_dependency(%q<eventmachine>, [">= 0.12.10"])
+      s.add_dependency(%q<rack-test>, [">= 0"])
       s.add_dependency(%q<hoe>, [">= 2.9.1"])
     end
   else
@@ -69,7 +69,8 @@ Currently, supporting servers include:
     s.add_dependency(%q<hoe-git>, [">= 1.3"])
     s.add_dependency(%q<hoe-gemspec2>, [">= 1.0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
-    s.add_dependency(%q<eventmachine>, [">= 0.12.11"])
+    s.add_dependency(%q<eventmachine>, [">= 0.12.10"])
+    s.add_dependency(%q<rack-test>, [">= 0"])
     s.add_dependency(%q<hoe>, [">= 2.9.1"])
   end
 end

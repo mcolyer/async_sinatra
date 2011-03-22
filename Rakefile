@@ -14,7 +14,8 @@ Hoe.spec 'async_sinatra' do
   extra_dev_deps << %w(hoe-git >=1.3)
   extra_dev_deps << %w(hoe-gemspec2 >=1.0)
   extra_dev_deps << %w(rdoc)
-  extra_dev_deps << %w(eventmachine >=0.12.11)
+  extra_dev_deps << %w(eventmachine >=0.12.10)
+  extra_dev_deps << %w(rack-test)
 
   self.extra_rdoc_files = FileList["**/*.rdoc"]
   self.history_file     = "CHANGELOG.rdoc"
